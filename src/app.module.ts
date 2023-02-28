@@ -8,9 +8,7 @@ import * as Joi from 'joi';
   imports: [
     ConfigModule.forRoot({
       validationSchema: Joi.object({
-        NODE_ENV: Joi.string()
-          .valid('development', 'production')
-          .default('development'),
+        NODE_ENV: Joi.string().valid('development', 'production'),
       }),
     }),
     MongooseModule.forRoot(process.env.mongo),
